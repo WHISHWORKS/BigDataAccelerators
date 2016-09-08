@@ -26,8 +26,8 @@ public class SalesRouteService implements SparkApplication {
             public Object handle(Request request, Response response) {
             	System.out.println("-----------Search Selection------------");
             	System.out.println("Request Parameter--- name--" + request.params("name"));
-            	System.out.println(gson.toJson(service.findOrg(URLDecoder.decode(request.params("name")))));
-                return gson.toJson(service.findOrg(URLDecoder.decode(request.params("name"))));
+            	System.out.println(gson.toJson(service.findNodesData(URLDecoder.decode(request.params("name")))));
+                return gson.toJson(service.findNodesData(URLDecoder.decode(request.params("name"))));
             }
         });
         get(new Route("/search") {

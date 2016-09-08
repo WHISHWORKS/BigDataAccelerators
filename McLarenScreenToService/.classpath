@@ -20,7 +20,6 @@
 	<classpathentry kind="lib" path="lib/neo4j-jdbc-2.3.2.jar"/>
 	<classpathentry kind="lib" path="lib/neo4j-1.9.jar"/>
 	<classpathentry kind="lib" path="neo4j-jdbc-2.1.4-jar-with-dependencies.jar"/>
-	<classpathentry kind="lib" path="lib/neo4j-jdbc-2.1.4-jar-with-dependencies.jar"/>
 	<classpathentry kind="lib" path="lib/neo4j-jmx-2.3.6.jar"/>
 	<classpathentry kind="lib" path="lib/neo4j-kernel-2.3.6.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
