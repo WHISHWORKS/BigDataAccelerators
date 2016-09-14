@@ -1,0 +1,164 @@
+JSP,ACTIONITEM,SCREEN
+AllocationVisibility,Action, AllocationVisibility.jsp
+AllocationVisibility,Update,EditAllocationVisibility.jsp
+AssignCustomer,prerender,AssignCustomer.jsp
+AssignCustomer,Assign Customer,Message.jsp
+AssignCustomer,Back,QuotesList.jsp
+Configurator,prerender,Configurator.jsp
+Configurator,Back,Configurator.jsp
+Configurator,Submit,FlashConfigurator.jsp
+Configurator,Back,FlashConfigurator.jsp
+Configurator,Submit,Configurator.jsp
+CreateUpdateCustomer,prerender,CreateUpdateCustomer.jsp
+CreateUpdateCustomer,Delete,CreateUpdateCustomer.jsp
+CreateUpdateCustomer,Add,CreateUpdateCustomer.jsp
+CreateUpdateCustomer,Back,CustomerList.jsp
+CreateUpdateCustomer,Car Configurations,QuotesList.jsp
+CreateUpdateCustomer,Change Owner,CreateUpdateCustomer.jsp
+CreateUpdateCustomer,Back,CreateUpdateCustomer.jsp
+CreateUpdateCustomer,No,CreateUpdateCustomer.jsp
+CustomerDetails,Update Owner Details,CustomerDetails.jsp
+CustomerDetails,Change Owner,CustomerDetails.jsp
+CustomerDetails,Close,CustomerDetails.jsp
+CustomerDetails,Confirm,CustomerDetails.jsp
+CustomerList,Create New Customer,CreateUpdateCustomer.jsp
+CustomerList,View Car Configuration(s),QuotesList.jsp
+CustomerList,Create Car Configuration,Configurator.jsp
+CustomerList,Back,QuoteDetails.jsp
+CustomerList,Continue,CustomerList.jsp
+EditAllocationVisibility,prerender,EditAllocationVisibility.jsp
+EditAllocationVisibility,Back,AllocationVisibility.jsp
+FlashConfigurator,prerender,FlashConfigurator.jsp
+Message,prerender,Message.jsp
+Message,Close,CustomerList.jsp
+Message,Back,CreateUpdateCustomer.jsp
+Message,Create Another Customer,CreateUpdateCustomer.jsp
+Message,Create Configuration,Configurator.jsp
+Message,Close,QuotesList.jsp
+OrdersList,No,OrderList.jsp
+QuoteDetails,Modify,FlashConfigurator.jsp
+QuoteDetails,OK,QuoteDetails.jsp
+QuoteDetails,Select Production Slot,SelectSlot.jsp
+QuoteDetails,Proceed to Place Order,Message.jsp
+QuotesList,Create Car Configuration,Configurator.jsp
+QuotesList,Back,CustomerList.jsp
+QuotesList,Yes,AssignCustomer.jsp
+QuotesList,No,QuotesList.jsp
+RetailAndRegistrationVehicle,Back,RetailAndRegistrationVehicle.jsp
+RetailAndRegistrationVehicle,View Service History,RetailAndRegistrationVehicle.jsp
+SelectSlot,Select Production Slot,QuoteDetails.jsp
+SelectSlot,Back,QuoteDetails.jsp
+SelectSlot,Place an Unscheduled Order,QuoteDetails.jsp
+VehicleSearch,prerender,VehicleSearch.jsp
+VehicleSearch,Close,VehicleSearch.jsp
+VehicleSearch,View / Update Vehicle Information,RetailAndRegistrationVehicle.jsp
+VehicleStatus,Report Vehicle Arrived,RetailAndRegistrationVehicle.jsp
+VehicleStatus,Retail / Register Vehicle,RetailAndRegistrationVehicle.jsp
+VehicleStatus,Download Vehicle Invoice Documents,VehicleStatus.jsp
+VehicleStatus,Retail / Register Vehicle,VehicleStatus.jsp
+VehicleStatus,No,VehicleStatus.jsp
+Diagnostics,Download File,Diagnostics.jsp
+Diagnostics,Diagnostics.fileExt,Diagnostics.jsp
+HowToUse,here,HowToUse.jsp
+HowToUse,WebCGM Plugin,HowToUse.jsp
+Message,Sign In,Message.jsp
+RCLaunchSIS,No,RCLaunchSIS.jsp
+RCLaunchSIS,Yes,RCLaunchSIS.jsp
+RCLaunchSIS,No,RCLaunchSIS.jsp
+RCLaunchSIS,Apply,RCLaunchSIS.jsp
+RCRedirect,Deny,RCRedirect.jsp
+RCRedirect,Accept,Registration.jsp
+RCRedirect,Register,RCRedirect.jsp
+Registration,Back,Registration.jsp
+SearchDocuments,Download File,Download File.jsp
+Subscription,Select And Continue,Subscription.jsp
+Subscription,Back,SubscriptionHistory.jsp
+Subscription,Close,Subscription.jsp
+SubscriptionHistory,Purchase New,Subscription.jsp
+BulletineDoc,OK,BulletineDoc.jsp
+BulletineDoc,Deny,BulletineDoc.jsp
+BulletineDoc,Accept,BulletineDoc.jsp
+BulletineDoc,Download Document,BulletineDoc.jsp
+BulletineDoc,Confirm Read,BulletineDoc.jsp
+Documentation,Search Files,SearchDocumentList.jsp
+SearchDocumentList,Download Document,SearchDocumentList.jsp
+SearchDocumentList,Back,Documentation.jsp
+CreateRetailer,Change User Status,DeactivateUser.jsp
+CreateRetailer,Add,CreateRetailer.jsp
+CreateRetailer,Remove,CreateRetailer.jsp
+CreateRetailer,Delete,CreateRetailer.jsp
+CreateRetailer,Add,CreateRetailer.jsp
+CreateRetailer, Back,RetailerList.jsp
+CreateRetailer,No,CreateRetailer.jsp
+CreateRetailer,Yes,CreateRetailer.jsp
+DeactivateUser,Back,RetailerList.jsp
+Message,Close,RetailerList.jsp
+Message,Back,CreateRetailer.jsp
+Message,Create Another User,CreateRetailer.jsp
+Message,Close,RetailerList.jsp
+RetailerAccountDetails,Same as default,RetailerAccountDetails.jsp
+RetailerAccountDetails,Save,RetailerAccountDetails.jsp
+RetailerAccountDetails,No,RetailerAccountDetails.jsp
+RetailerAccountDetails,Yes,RetailerAccountDetails.jsp
+RetailerList, Close,RetailerList.jsp
+AdditionalCostsParts,View / Update Cost,WorkPackage.jsp
+AdditionalCostsParts,View Cost,WorkPackage.jsp
+AdditionalCostsParts,Add Additional Cost,WorkPackage.jsp
+AdditionalCostsParts,Close,WorkPackage.jsp
+Attachments,Click here to upload document(s).,Attachments.jsp
+Attachments,Close,Attachments.jsp
+Attachments,Back," WorkPackage.jsp , Bulletins.jsp"
+Attachments,Refresh List,Attachments.jsp
+Bulletins,View Document,Bulletins.jsp
+ClaimApprovalDetails,Accept Split Decision,Message.jsp
+ClaimApprovalDetails,Download Document,ClaimApprovalDetails.jsp
+CreateServiceBooking,Close,ViewServiceBooking.jsp
+CreateServiceBooking,No,CreateServiceBooking.jsp
+CreateServiceBooking,Save,Message.jsp 
+CustomerList,Search,CustomerList.jsp
+CustomerList,View Owned Vehicle List,/McLarenCarList.jsp
+LaunchSIS,No,LaunchSIS.jsp
+LaunchSIS,Close,/WorkPackage.jsp
+McLarenCarList,View Vehicle Informatio,/VehicleInformationScreen.jsp
+McLarenCarList,Back,/CustomerList.jsp
+McLarenCarList,Add Vehicle,/VehicleInformationScreen.jsp
+Overview,Launch SIS,/LaunchSIS.jsp
+Overview,Launch SPC,/LaunchSIS.jsp
+RecalculateLabourCost, Preview Claim Summary,RecalculateLabourCost
+RecalculateLabourCost, Confirm Claim Submission,RecalculateLabourCost
+Resolution,Fetch Resolution Code & Causal Part,/LaunchSIS.jsp
+Resolution,Close Work Package,Resolution.jsp
+SearchTechnicalRequest,View / Update Attachments,/Attachments.jsp
+VehicleInformationScreen,Back,/McLarenCarList.jsp
+VehicleInformationScreen,View Service History,WorkPackageList.jsp
+ViewMDSFeedBack,Back,ViewServiceBooking.jsp
+ViewMDSFeedBack,Close,ViewMDSFeedBack.jsp
+ViewServiceBooking,View / Update Work Package,WorkPackage.jsp
+ViewServiceBooking,View Work Package,WorkPackage.jsp
+ViewServiceBooking,Add Work Package,/WorkPackage.jsp
+ViewServiceBooking,MDS Diagnostics,ViewMDSFeedBack.jsp
+ViewUpdateTechnicalRequest,Attachments,Attachments.jsp
+WarrantyClaimList,View / Update Work Package,/WorkPackage.jsp
+WarrantyClaimList,View Work Package,/WorkPackage.jsp
+WorkPackage,Back,WorkPackageList.jsp
+WorkPackage,Create,Message.jsp
+WorkPackage,Update,Message.jsp
+WorkPackage,Add / View Attachments,WorkPackage.jsp
+WorkPackage,Campaign documents,WorkPackage.jsp
+WorkPackage,Submit Claim,Message.jsp
+WorkPackageList,View Service Booking,ViewServiceBooking.jsp
+LaunchUniDial,prerender,LaunchUniDial.jsp
+LaunchUniDial,Close,PartsRequest.jsp
+PartsRequest,Update Part Quantity,PartsRequest.jsp
+PartsRequest,Remove Part,PartsRequest.jsp
+PartsRequest,Add Parts Manually,PartsRequest.jsp
+PartsRequest,Submit Order,PartsRequest.jsp
+PartsRequest,Close,PartsRequest.jsp
+PartsRequest,Save,PartsRequest.jsp
+PartsRequest,No,PartsRequest.jsp
+PartsRequest,Yes,PartsRequest.jsp
+LogisticsVehicles,Search,LogisticsVehicles.jsp
+Message,Close,Message.jsp
+TelediagnosticsSearch,View Telediagnostics,TelediagnosticsSearch.jsp
+TelediagnosticsSearch,Search,TelediagnosticsSearch.jsp
+VehicleLogisticsDetailEntry,Back,LogisticsVehicles.jsp

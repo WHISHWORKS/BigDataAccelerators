@@ -1,0 +1,68 @@
+JSP,ACTIONITEM
+RetailAndRegistrationVehicle,Sales Documentation
+RetailAndRegistrationVehicle,Close
+RetailerDetails,prerender
+SalesQuota,Search
+SalesQuota,Update Vehicle Usage
+SalesQuota,View Mandatory/Unavailable Options
+SalesQuota,Update Vehicle Usage/Transportation Method
+SalesQuota,Close
+SalesQuota,Back
+SalesQuota,Submit
+SelectSlot,View Mandatory/Unavailable Options
+SelectSlot,Close
+VehicleSearch,Back
+VehicleSearch,Add Vehicle
+VehicleStatus,Update Vehicle Usage 
+VehicleStatus,Update Vehicle Usage/Transportation Method
+VehicleStatus,Close
+VehicleStatus,Update Details
+VehicleStatus,No
+Message.jsp,Back
+RCLaunchSIS,Close
+RCRedirect,WebCGM Plugin
+SearchDocuments,SearchDocuments.fileExt
+Documentation,Deny
+Documentation,Accept
+Documentation,Prerender
+SearchDocumentList,prerender
+CreateRetailer,Change User Status
+CreateRetailer,Add
+CreateRetailer,Remove
+CreateRetailer,Action
+CreateRetailer,Delete
+CreateRetailer,Add
+CreateRetailer, Back
+CreateRetailer,Save
+CreateRetailer,Back
+CreateRetailer,Save
+CreateRetailer,No
+CreateRetailer,Yes
+DeactivateUser,Back
+DeactivateUser,Create Another User
+DeactivateUser,Close
+RetailerAccountDetails,Same as default
+RetailerAccountDetails,Save
+RetailerAccountDetails,No
+RetailerAccountDetails,Yes
+RetailerList,Search
+RetailerList,View/Update Retailer User
+RetailerList,View Retailer User Roles
+RetailerList,Change Retailer User Status
+RetailerList, Select Retailer Users
+RetailerList, Close
+RetailerList, Close
+UserDetailsEdit,Update
+Welcome,Welcome.vieMyDetailsRedirect
+CampaignSearch,Search Campaigns
+CampaignSearch,Export To Excel
+ClaimApprovalDetails,Revise Claim
+ClaimApprovalDetails,Save
+ClaimApprovalDetails,No
+CreateServiceBooking,Back
+CreateUpdateECUInformation,Close
+ServiceBookingSearch,Export To Excel
+ViewUpdateTechnicalRequest,Add Comment
+WorkPackageList,Back
+WorkPackageSearch,Export To Excel
+TelediagnosticsSearch,No
