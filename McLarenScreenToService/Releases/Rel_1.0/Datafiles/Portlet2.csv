@@ -51,11 +51,11 @@ SelectSlot,Back,QuoteDetails.jsp
 SelectSlot,Place an Unscheduled Order,QuoteDetails.jsp
 VehicleSearch,prerender,VehicleSearch.jsp
 VehicleSearch,Close,VehicleSearch.jsp
-VehicleSearch,View / Update Vehicle Information,RetailAndRegistrationVehicle.jsp
+VehicleSearch,View/Update Vehicle Information,RetailAndRegistrationVehicle.jsp
 VehicleStatus,Report Vehicle Arrived,RetailAndRegistrationVehicle.jsp
-VehicleStatus,Retail / Register Vehicle,RetailAndRegistrationVehicle.jsp
+VehicleStatus,Retail/Register Vehicle,RetailAndRegistrationVehicle.jsp
 VehicleStatus,Download Vehicle Invoice Documents,VehicleStatus.jsp
-VehicleStatus,Retail / Register Vehicle,VehicleStatus.jsp
+VehicleStatus,Retail/Register Vehicle,VehicleStatus.jsp
 VehicleStatus,No,VehicleStatus.jsp
 Diagnostics,Download File,Diagnostics.jsp
 Diagnostics,Diagnostics.fileExt,Diagnostics.jsp
@@ -101,7 +101,7 @@ RetailerAccountDetails,Save,RetailerAccountDetails.jsp
 RetailerAccountDetails,No,RetailerAccountDetails.jsp
 RetailerAccountDetails,Yes,RetailerAccountDetails.jsp
 RetailerList, Close,RetailerList.jsp
-AdditionalCostsParts,View / Update Cost,WorkPackage.jsp
+AdditionalCostsParts,View/Update Cost,WorkPackage.jsp
 AdditionalCostsParts,View Cost,WorkPackage.jsp
 AdditionalCostsParts,Add Additional Cost,WorkPackage.jsp
 AdditionalCostsParts,Close,WorkPackage.jsp
@@ -128,22 +128,22 @@ RecalculateLabourCost, Preview Claim Summary,RecalculateLabourCost
 RecalculateLabourCost, Confirm Claim Submission,RecalculateLabourCost
 Resolution,Fetch Resolution Code & Causal Part,/LaunchSIS.jsp
 Resolution,Close Work Package,Resolution.jsp
-SearchTechnicalRequest,View / Update Attachments,/Attachments.jsp
+SearchTechnicalRequest,View/Update Attachments,/Attachments.jsp
 VehicleInformationScreen,Back,/McLarenCarList.jsp
 VehicleInformationScreen,View Service History,WorkPackageList.jsp
 ViewMDSFeedBack,Back,ViewServiceBooking.jsp
 ViewMDSFeedBack,Close,ViewMDSFeedBack.jsp
-ViewServiceBooking,View / Update Work Package,WorkPackage.jsp
+ViewServiceBooking,View/Update Work Package,WorkPackage.jsp
 ViewServiceBooking,View Work Package,WorkPackage.jsp
 ViewServiceBooking,Add Work Package,/WorkPackage.jsp
 ViewServiceBooking,MDS Diagnostics,ViewMDSFeedBack.jsp
 ViewUpdateTechnicalRequest,Attachments,Attachments.jsp
-WarrantyClaimList,View / Update Work Package,/WorkPackage.jsp
+WarrantyClaimList,View/Update Work Package,/WorkPackage.jsp
 WarrantyClaimList,View Work Package,/WorkPackage.jsp
 WorkPackage,Back,WorkPackageList.jsp
 WorkPackage,Create,Message.jsp
 WorkPackage,Update,Message.jsp
-WorkPackage,Add / View Attachments,WorkPackage.jsp
+WorkPackage,Add/View Attachments,WorkPackage.jsp
 WorkPackage,Campaign documents,WorkPackage.jsp
 WorkPackage,Submit Claim,Message.jsp
 WorkPackageList,View Service Booking,ViewServiceBooking.jsp
