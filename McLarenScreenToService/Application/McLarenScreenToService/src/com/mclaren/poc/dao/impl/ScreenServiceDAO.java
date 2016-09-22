@@ -29,8 +29,9 @@ public class ScreenServiceDAO{
 			if (auth != null) {
 				String[] parts = auth.split(":");
 				return new JdbcCypherExecutor(uri, parts[0], parts[1]);
-
+				//return new JdbcCypherExecutor();
 			}
+			//return new JdbcCypherExecutor();
 			return new JdbcCypherExecutor(uri);
 		} catch (MalformedURLException e) {
 			throw new IllegalArgumentException("Invalid Neo4j-ServerURL " + uri);
@@ -62,8 +63,7 @@ public class ScreenServiceDAO{
 				.query(" MATCH (n)-[r]->(m) where n.name={1} RETURN n.name,n.id, m.name, m.id", map("1", query));
 		List nodes = new ArrayList();
 		List rels = new ArrayList();
-		
-		while (result.hasNext()) {
+				while (result.hasNext()) {
 			Map<String, Object> row = result.next();
 			Map<String, Object> actorsource = (map("name", row.get("n.name"),"rel", row.get("n.id")));
 			Map<String, Object> targetactorsource = (map("name", row.get("m.name"),"rel", row.get("m.id")));

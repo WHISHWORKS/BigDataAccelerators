@@ -3,13 +3,25 @@ package com.mclaren.poc.dao.impl;
 import java.sql.*;
 import java.util.*;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import com.mclaren.poc.constants.Constants;
 import com.mclaren.poc.dao.CypherExecutor;
 
 
 public class JdbcCypherExecutor implements CypherExecutor {
 
-    private final Connection conn;
+     Connection conn;
+
+	Context ctx = null;
+	
+	Statement stmt = null;
+	ResultSet rs = null;
+	DataSource ds=null;
+		
 
     public JdbcCypherExecutor(String url) {
         this(url,null,null);
@@ -28,7 +40,26 @@ public class JdbcCypherExecutor implements CypherExecutor {
             throw new RuntimeException(e);
         }
     }
-
+    /*public  JdbcCypherExecutor() {
+        try {
+        	
+        	 Context initContext = new InitialContext();
+             Context envContext  = (Context)initContext.lookup("java:/comp/env");
+             DataSource ds = (DataSource)envContext.lookup("jdbc/test");
+             conn = ds.getConnection();
+        		System.out.println("SUCCESS Connecting to Neo4j Driver");
+        		
+        	} catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (NamingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    }*/
+    
+    
+    
+    
     @Override
     public Iterator<Map<String, Object>> query(String query, Map<String, Object> params) {
         try {

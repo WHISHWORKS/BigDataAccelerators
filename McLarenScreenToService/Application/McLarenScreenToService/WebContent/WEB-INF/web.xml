@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>McLarenScreenToService</display-name>
-  <welcome-file-list>
-    <welcome-file>mainscreen.html</welcome-file>
-  </welcome-file-list>
- </web-app>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>McLarenScreenToService</display-name>
+	<welcome-file-list>
+		<welcome-file>mainscreen.html</welcome-file>
+	</welcome-file-list>
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/test</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	<!-- <security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Entire Application</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>graphdbtool-user</role-name>
+		</auth-constraint>
+	</security-constraint>
+	Define the Login Configuration for this Application
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>Graph DB Tool Members-only Area</realm-name>
+	</login-config>
+	<security-role>
+		<role-name>graphdbtool-user</role-name>
+	</security-role> -->
+</web-app>

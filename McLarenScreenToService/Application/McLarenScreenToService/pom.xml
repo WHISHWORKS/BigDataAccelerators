@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	<url>http://github.com/jexp/neo4j-movies</url>
 	<properties>
-		<neo4j.version>2.0.0-M06</neo4j.version>
+		<neo4j.version>2.3.2</neo4j.version>
 	</properties>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
@@ -44,9 +44,25 @@
          <dependency>
 			<groupId>org.neo4j</groupId>
 			<artifactId>neo4j-kernel</artifactId>
-			<version>2.1.2</version>
+			<version>2.3.6</version>
 		</dependency>
-        <dependency>
+		<dependency>
+            <groupId>org.neo4j</groupId>
+            <artifactId>neo4j-jdbc</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+		 <dependency>
+            <groupId>org.neo4j</groupId>
+            <artifactId>neo4j</artifactId>
+            <version>2.3.6</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.neo4j</groupId>
+                    <artifactId>neo4j-jmx</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+		 <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>

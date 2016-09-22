@@ -46,6 +46,7 @@ public class SreenServlet extends HttpServlet {
 			System.out.println("Search Data"+gson.toJson(service.search(request.getParameter("searchValue"))));
 			response.getWriter().write(gson.toJson(service.search(request.getParameter("searchValue"))));
 		} if(action != null && action.equalsIgnoreCase("2")){
+			
 			System.out.println("Search Data"+gson.toJson(service.findNodesData(request.getParameter("searchValue"))));
 			response.getWriter().write(gson.toJson(service.findNodesData(request.getParameter("searchValue"))));
 		}if(action != null && action.equalsIgnoreCase("3")){
@@ -54,7 +55,6 @@ public class SreenServlet extends HttpServlet {
 			System.out.println("Search Data"+gson.toJson(service.findSubSelectedSyatem(request.getParameter("searchValue"),list)));
 			response.getWriter().write(gson.toJson(service.findSubSelectedSyatem(request.getParameter("searchValue"),list)));
 		}if(action != null && action.equalsIgnoreCase("4")){
-			
 			System.out.println("Get all the Relations"+ gson.toJson(service.getAllRelations()));
 			response.getWriter().write(gson.toJson(service.getAllRelations()));
 		}if(action != null && action.equalsIgnoreCase("5")){

@@ -218,12 +218,14 @@
       }
 
       function eachItemClick(searchItem) {
+    	  
          $.ajax({
             type: "POST",
             url: "test",
             dataType: 'json',
             data: {
                "action": "2",
+               "parentSearch":searchItem,
                "searchValue": searchItem
             },
             success: function(result) {
