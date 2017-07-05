@@ -76,6 +76,8 @@ public class ScreenServiceDAO{
 			if (row.get("m.name") != null) {
 				int target = rels.indexOf(targetactorsource);
 				if (target == -1) {
+					
+				
 					rels.add(targetactorsource);
 				}
 			}
