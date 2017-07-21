@@ -251,7 +251,7 @@ Updatevehicle,SMSVehicleRegistrationTS,CRM
 Updatevehicle,SMSVehicleTS,CRM
 ChangeVehicleOwnership,ValidateUserService,LDAP
 ChangeVehicleOwnership,SMSVehicleTS,CRM
-ESBPulseChecker,No Technical Services,
+ESBPulseChecker,No Technical Services,NA
 CRMContactStateChangeTSService,CRMTS,CRM
 CRMContactStateChangeTSService,CrmDiscoveryServiceSoap,CRM
 CRMContactStateChangeTSService,CrmServicesSoap,CRM
