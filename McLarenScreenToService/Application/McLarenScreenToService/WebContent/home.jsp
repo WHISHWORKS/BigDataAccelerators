@@ -137,6 +137,46 @@ $('#insightList').multiselect({
        	 
        	 } 
  		 });
+ 		 
+ 		 
+ 		 
+      $.ajax({
+          type: "POST",
+          url: "test",
+          dataType: 'json',
+          data: {
+             "action": "6",
+          },
+          success: function(rdata) {
+            
+        	
+                     var t = $("table#results tbody").empty();
+                     if(!result || result.length == 0) {
+                        $("#divSearchReasult").hide();
+                        $("#multiselectheader").hide();
+                        $("#alerts").show();
+                        $("#title").empty();
+                        $("#graph").empty();
+                     } else {
+                        // alert('Test');
+                        $("#divSearchReasult").show();
+                        $("#alerts").hide();
+                        result.forEach(function(row) {
+                           var bp = row.bp;
+                           $("<tr><td class='bp'>" + bp + "</td></tr>").appendTo(t).click(
+                              function() {
+                                 var input = $(this).find("td.bp").text();
+                                 $("#graph").empty();
+                                 $("#title").text(input);
+                                 eachItemClick(input);
+                              })
+                        });
+                     }
+                
+        	  
+          }
+       });
+      
 	
 	$("#btnSearch").click(function(){
 		$("#graph").empty();
@@ -199,7 +239,7 @@ $('#insightList').multiselect({
     	 },
          success: function(result) {
         	 treeGraph(result, "#graph");
-        } 
+        } //
    });
  }
  function eachItemChecklist(searchItem){
@@ -216,7 +256,7 @@ $('#insightList').multiselect({
     			"searchItem":searchItem.toString()
     	 },
          success: function(result) {
-        	 treeGraph(result, "#graph");
+        	 //treeGraph(result, "#graph");
         	 //forceGraph(result, "#graph");
         }
     	 });

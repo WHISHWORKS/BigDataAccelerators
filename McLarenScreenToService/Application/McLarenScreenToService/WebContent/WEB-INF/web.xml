@@ -13,7 +13,7 @@
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
 	</resource-ref>
-	<!-- <security-constraint>
+	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>Entire Application</web-resource-name>
 			<url-pattern>/*</url-pattern>
@@ -22,12 +22,11 @@
 			<role-name>graphdbtool-user</role-name>
 		</auth-constraint>
 	</security-constraint>
-	Define the Login Configuration for this Application
 	<login-config>
 		<auth-method>BASIC</auth-method>
 		<realm-name>Graph DB Tool Members-only Area</realm-name>
 	</login-config>
 	<security-role>
 		<role-name>graphdbtool-user</role-name>
-	</security-role> -->
+	</security-role>
 </web-app>

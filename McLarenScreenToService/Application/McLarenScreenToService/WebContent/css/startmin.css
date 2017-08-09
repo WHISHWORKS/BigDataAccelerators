@@ -86,9 +86,11 @@ tr:nth-child(odd) {
 }
 
 .navbar-header {
-	float: left;
+	float: right;
 	background-color: #2a4c5e;
 	color: #000;
+	padding-top: 10px;
+	padding-left: 10px;s
 }
 
 .navbar-inverse {
@@ -818,4 +820,5 @@ path.link {
 
 .navbar-brand {
 	color: #fff;
+	
 }

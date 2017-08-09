@@ -36,10 +36,12 @@
 
       <!-- Navigation -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-         <div class="navbar-header">
-            <div class="navbar-brand">Graph DB Tool</div>
+      
+         <div class="navbar-header"id="home">
+         <img alt="logo sys" src="Images/logo2.png" >
+                   
          </div>
-
+<div class="navbar-brand">Graph DB Tool </div>
          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -48,6 +50,7 @@
          </button>
 
          <!-- Sidebar -->
+       
 
          <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
@@ -131,13 +134,29 @@
    <!-- Custom Theme JavaScript -->
    <script src="js/startmin.js"></script>
 
+
+
    <script id="example">
       $('#insightList').multiselect({
          enableClickableOptGroups: true
       });
    </script>
    <script type="text/javascript">
-      $('#btnSelected').click(function() {
+   
+   
+   $("#idSearch").keyup(function(event){
+	    if(event.keyCode == 13){
+	       
+	    	$("#graph").empty();
+	         var searchValue = $('#idSearch').val();
+	         if(!searchValue || searchValue.length == 0) {
+	            alert('Enter some text');
+	         } else {
+	            loadSearchList();
+	         }
+	    }
+	});
+         $('#btnSelected').click(function() {
          var selected = $("#insightList option:selected");
          var message = "";
          selected.each(function() {
@@ -146,6 +165,50 @@
          $("#graph").empty();
          searchItemSelected(message);
       });
+         
+         $('#home').click(function() {
+            
+        	 $.ajax({
+                 type: "POST",
+                 url: "test",
+                 dataType: 'json',
+                 data: {
+                    "action": "6",
+                 },
+                 success: function(sdata) {
+                   
+               	
+                            var t = $("table#results tbody").empty();
+                            if(!sdata || sdata.length == 0) {
+                               $("#divSearchReasult").hide();
+                               $("#multiselectheader").hide();
+                               $("#alerts").show();
+                               $("#title").empty();
+                               $("#graph").empty();
+                            } else {
+                               // alert('Test');
+                               $("#divSearchReasult").show();
+                               $("#alerts").hide();
+                               sdata.forEach(function(row) {
+                                  var bp = row.bp;
+                                  $("<tr><td class='bp'>" + bp + "</td></tr>").appendTo(t).click(
+                                     function() {
+                                        var input = $(this).find("td.bp").text();
+                                        $("#graph").empty();
+                                        $("#title").text(input);
+                                        eachItemClick(input);
+                                     })
+                               });
+                            }
+                       
+               	  
+                 }
+              });
+             
+        	 
+          });
+         
+         
       $('#insightList').multiselect({
          includeSelectAllOption: true
       });
@@ -166,6 +229,49 @@
             });
          }
       });
+      
+      
+      
+      $.ajax({
+          type: "POST",
+          url: "test",
+          dataType: 'json',
+          data: {
+             "action": "6",
+          },
+          success: function(sdata) {
+            
+        	
+                     var t = $("table#results tbody").empty();
+                     if(!sdata || sdata.length == 0) {
+                        $("#divSearchReasult").hide();
+                        $("#multiselectheader").hide();
+                        $("#alerts").show();
+                        $("#title").empty();
+                        $("#graph").empty();
+                     } else {
+                        // alert('Test');
+                        $("#divSearchReasult").show();
+                        $("#alerts").hide();
+                        sdata.forEach(function(row) {
+                           var bp = row.bp;
+                           var act=row.actionname;
+                           $("<tr><td class='bp'>" + bp + "</td><td class='act'>" + act + "</td></tr>").appendTo(t).click(
+                              function() {
+                                 var input = $(this).find("td.bp").text();
+                                 $("#graph").empty();
+                                 $("#title").text(input);
+                                 eachItemClick(input);
+                              })
+                        });
+                     }
+                
+        	  
+          }
+       });
+      
+     
+   
       $("#btnSearch").click(function() {
          $("#graph").empty();
          var searchValue = $('#idSearch').val();
@@ -204,7 +310,8 @@
                   $("#alerts").hide();
                   result.forEach(function(row) {
                      var bp = row.bp;
-                     $("<tr><td class='bp'>" + bp + "</td></tr>").appendTo(t).click(
+                     var act=row.actionname;
+                     $("<tr><td class='bp'>" + bp + "</td><td class='act'>" + act + "</td></tr>").appendTo(t).click(
                         function() {
                            var input = $(this).find("td.bp").text();
                            $("#graph").empty();
@@ -217,6 +324,10 @@
          });
       }
 
+      
+      
+     
+          
       function eachItemClick(searchItem) {
     	  
          $.ajax({
@@ -233,13 +344,15 @@
                $('#insightList').multiselect('refresh');
                $("#multiselectheader").show();
                treeGraph(result, "#graph");
+              
+              // testing(result, "#graph")
             }
          });
       }
 
       function eachItemChecklist(searchItem) {
          var inp = $("#title").html();
-         // alert(inp);
+          alert(inp);
          $.ajax({
             type: "POST",
             url: "test",
@@ -250,7 +363,10 @@
                "searchItem": searchItem.toString()
             },
             success: function(result) {
-               treeGraph(result, "#graph");
+            	  treeGraph(result, "#graph");
+               
+               
+               //testing(result, "#graph")
                //forceGraph(result, "#graph");
             }
          });
@@ -270,12 +386,12 @@
             },
             success: function(result) {
                treeGraphWithAdjacentNodes(result, "#graph");
-               //forceGraph(result, "#graph");
+              // forceGraph(result, "#graph");
             }
          });
       }
 
-      function eachGraphNodeClick(previous, searchItem) {
+       /* function eachGraphNodeClick(previous, searchItem) {
          $.ajax({
             type: "POST",
             url: "test",
@@ -288,7 +404,7 @@
                addNewNode(previous, result.children);
             }
          });
-      }
+      }  */
 
       function treeGraph(treeData, treeContainerDom) {
          var width = 700;
@@ -306,10 +422,15 @@
          };
          var tree = d3.layout.tree()
             .size([height, width]);
+         
+         
+         
          var diagonal = d3.svg.diagonal()
             .projection(function(d) {
                return [d.y, d.x];
             });
+         
+       
          d3.selectAll("svg > *").remove();
          var svg = d3.select(treeContainerDom).append("svg").attr("width", 1200 + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -320,8 +441,12 @@
          update(root);
 
          function addNewNode(d, item) {
+        	 if (!d._children || d._children.length === 0) 
+       		{ 
             d._children = d._children || [];
             d._children = d._children.concat(item);
+            
+       		}
          }
 
          function update(source) {
@@ -330,7 +455,7 @@
             var links = tree.links(nodes);
             // Normalize for fixed-depth.
             nodes.forEach(function(d) {
-               d.y = d.depth * maxLabel;
+               d.y = d.depth * 200;
             });
             // Update the nodes…
             var node = svg.selectAll("g.node")
@@ -345,33 +470,36 @@
                   return "translate(" + source.y0 + "," + source.x0 + ")";
                })
                .on("click", function(d) {
-                  click(d);
-                  if(!d._children || d._children.length === 0) {
+              
+                
                      var input = d3.select(this).text();
                      $.ajax({
                         type: "POST",
                         url: "test",
                         dataType: 'json',
                         data: {
-                           "action": "2",
+                           "action": "7",
                            "searchValue": input
                         },
                         success: function(result) {
-                           // alert(result);
-                           addNewNode(d, result.children);
-                           //click(d);
+                        
+                  
+                          addNewNode(d, result.children);
+                           click(d);
                         }
                      });
-                  }
+                 
                });
             nodeEnter.append("circle")
                .attr("r", 5)
-               .attr("stroke", function(d) {
+               
+                 .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+              /*  .attr("stroke", function(d) {
                   return d._children ? "steelblue" : "#00c13f";
-               });
+               }); */
             nodeEnter.append("text")
                .attr("x", function(d) {
-                  var spacing = computeRadius(d) + 5;
+                  var spacing = computeRadius(d) + 15;
                   return d.children || d._children ? -15 : 15;
                })
                .attr("dy", "-10")
@@ -395,10 +523,10 @@
                .attr("r", function(d) {
                   return computeRadius(d);
                })
-               //  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-               .attr("stroke", function(d) {
+               .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+               /* .attr("stroke", function(d) {
                   return d._children ? "steelblue" : "#00c13f";
-               });
+               }); */
             nodeUpdate.select("text").style("fill-opacity", 1);
             // Transition exiting nodes to the parent's new position.
             var nodeExit = node.exit().transition()
@@ -454,12 +582,12 @@
                .insert("g")
                .attr("class", "link")
                .append("text")
-               .attr("dy", ".35em")
+               .attr("dy", ".85em")
                .style("font-weight", "Italic")
                .attr("style", "font-size: 12; font-family: Times New Roman")
                .attr("text-anchor", "middle")
                .text(function(d) {
-                  return d.target.rel;
+                  return d.source.rel+" "+":"+" "+d.target.rel;
                });
             // Transition link text to their new positions
             linktext.transition()
@@ -481,7 +609,7 @@
             else return radius;
          }
 
-         function nbEndNodes(n) {
+          function nbEndNodes(n) {
             nb = 0;
             if(n.children) {
                n.children.forEach(function(c) {
@@ -494,7 +622,7 @@
             } else nb++;
             return nb;
          }
-
+ 
          function click(d) {
             if(d.children) {
                d._children = d.children;
@@ -515,6 +643,201 @@
          }
       }
 
+      
+      
+      
+      
+      function testing(treeData, treeContainerDom){
+    	  
+    	
+    	  var m = [20, 120, 20, 120],
+    	    w = 1280 - m[1] - m[3],
+    	    h = 800 - m[0] - m[2],
+    	    i = 0,
+    	    root;
+
+    	var tree = d3.layout.tree()
+    	    .size([h, w]);
+    	
+    	
+
+    	var diagonal = d3.svg.diagonal()
+    	    .projection(function(d) { return [d.y, d.x]; });
+
+    	var vis = d3.select("#graph").append("svg")
+    	    .attr("width", w + m[1] + m[3])
+    	    .attr("height", h + m[0] + m[2])
+    	  .append("g")
+    	    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+    	d3.json(treeData, function(json) {
+    	  root = treeData;
+    	  root.x0 = h / 2;
+    	  root.y0 = 0;
+
+    	  function toggleAll(d) {
+    	    if (d.children) {
+    	      d.children.forEach(toggleAll);
+    	      toggle(d);
+    	    }
+    	  }
+
+    	  // Initialize the display to show a few nodes.
+    	  root.children.forEach(toggleAll);
+    	      	  update(root);
+    	});
+
+    	function addNewNode(d, item) {
+    		
+    		
+            	 if (!d._children || d._children.length === 0) 
+           		{ 
+            		
+               d._children = d._children || [];
+                d._children = d._children.concat(item);
+              
+                
+           		}
+            	 
+            	 
+    	}
+
+    	function update(source) {
+    	  var duration = d3.event && d3.event.altKey ? 5000 : 500;
+
+    	  // Compute the new tree layout.
+    	  var nodes = tree.nodes(root).reverse();
+
+    	  // Normalize for fixed-depth.
+    	  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+    	  // Update the nodes…
+    	  var node = vis.selectAll("g.node")
+    	      .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+    	  // Enter any new nodes at the parent's previous position.
+    	  var nodeEnter = node.enter().append("g")
+    	      .attr("class", "node")
+    	      .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+    	      .on("click", function(d) {
+    	      
+    	      		var newItem;
+    	      
+    	      		
+    	            
+    	            var input = d3.select(this).text();
+                    $.ajax({
+                       type: "POST",
+                       url: "test",
+                       dataType: 'json',
+                       data: {
+                          "action": "7",
+                          "searchValue": input
+                       },
+                       success: function(result) {
+                    	   
+                    	  
+                       	
+                    	   newItem=result.children;
+                    	   
+                    	   addNewNode(d, newItem); 	
+                    	   toggle(d); update(d);  
+                    	   
+                       }
+                    }); 
+    	            
+                    
+    	        
+    	      		
+    	      });
+
+    	  nodeEnter.append("circle")
+    	      .attr("r", 10)
+    	      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+    	  nodeEnter.append("text")
+    	      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+    	      .attr("dy", ".35em")
+    	      .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+    	      .text(function(d) { return d.name; })
+    	      .style("fill-opacity", 1e-6);
+
+    	  // Transition nodes to their new position.
+    	  var nodeUpdate = node.transition()
+    	      .duration(duration)
+    	      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+    	  nodeUpdate.select("circle")
+    	      .attr("r", 10)
+    	      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+    	  nodeUpdate.select("text")
+    	      .style("fill-opacity", 1);
+
+    	  // Transition exiting nodes to the parent's new position.
+    	  var nodeExit = node.exit().transition()
+    	      .duration(duration)
+    	      .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+    	      .remove();
+
+    	  nodeExit.select("circle")
+    	      .attr("r", 1e-6);
+
+    	  nodeExit.select("text")
+    	      .style("fill-opacity", 1e-6);
+
+    	  // Update the links…
+    	  var link = vis.selectAll("path.link")
+    	      .data(tree.links(nodes), function(d) { return d.target.id; });
+
+    	  // Enter any new links at the parent's previous position.
+    	  link.enter().insert("path", "g")
+    	      .attr("class", "link")
+    	      .attr("d", function(d) {
+    	        var o = {x: source.x0, y: source.y0};
+    	        return diagonal({source: o, target: o});
+    	      })
+    	    .transition()
+    	      .duration(duration)
+    	      .attr("d", diagonal);
+
+    	  // Transition links to their new position.
+    	  link.transition()
+    	      .duration(duration)
+    	      .attr("d", diagonal);
+
+    	  // Transition exiting nodes to the parent's new position.
+    	  link.exit().transition()
+    	      .duration(duration)
+    	      .attr("d", function(d) {
+    	        var o = {x: source.x, y: source.y};
+    	        return diagonal({source: o, target: o});
+    	      })
+    	      .remove();
+
+    	  // Stash the old positions for transition.
+    	  nodes.forEach(function(d) {
+    	    d.x0 = d.x;
+    	    d.y0 = d.y;
+    	  });
+    	}
+
+    	// Toggle children.
+    	function toggle(d) {
+    	  if (d.children) {
+    	    d._children = d.children;
+    	    d.children = null;
+    	    //close
+    	 
+    	  } else {
+    	    d.children = d._children;
+    	    d._children = null;
+    	  //open
+    	  }
+    	}
+    	
+      }
+    	  
       function treeGraphWithAdjacentNodes(treeData, treeContainerDom) {
          var width = 700;
          var height = 650;
@@ -544,9 +867,13 @@
          root.children.forEach(collapse);
          update(root);
 
-         function addNewNode(d, item) {
+         function addNewNodes(d, item) {
+        	 
+        	 if (!d._children || d._children.length === 0) 
+        		{ 
             d._children = d._children || [];
             d._children = d._children.concat(item);
+        		}
          }
 
          function update(source) {
@@ -555,7 +882,7 @@
             var links = tree.links(nodes);
             // Normalize for fixed-depth.
             nodes.forEach(function(d) {
-               d.y = d.depth * maxLabel;
+               d.y = d.depth * 200;
             });
             // Update the nodes…
             var node = svg.selectAll("g.node")
@@ -571,9 +898,10 @@
                });
             nodeEnter.append("circle")
                .attr("r", 5)
-               .attr("stroke", function(d) {
+                .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+               /* .attr("stroke", function(d) {
                   return d._children ? "steelblue" : "#00c13f";
-               });
+               }); */
             nodeEnter.append("text")
                .attr("x", function(d) {
                   var spacing = computeRadius(d) + 5;
@@ -600,10 +928,10 @@
                .attr("r", function(d) {
                   return computeRadius(d);
                })
-               //  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-               .attr("stroke", function(d) {
+                .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+               /* .attr("stroke", function(d) {
                   return d._children ? "steelblue" : "#00c13f";
-               });
+               }); */
             nodeUpdate.select("text").style("fill-opacity", 1);
             // Transition exiting nodes to the parent's new position.
             var nodeExit = node.exit().transition()
@@ -659,12 +987,12 @@
                .insert("g")
                .attr("class", "link")
                .append("text")
-               .attr("dy", ".35em")
+               .attr("dy", ".85em")
                .style("font-weight", "Italic")
                .attr("style", "font-size: 12; font-family: Times New Roman")
                .attr("text-anchor", "middle")
                .text(function(d) {
-                  return d.target.rel;
+                  return d.source.rel+" "+":"+" "+d.target.rel;
                });
             // Transition link text to their new positions
             linktext.transition()

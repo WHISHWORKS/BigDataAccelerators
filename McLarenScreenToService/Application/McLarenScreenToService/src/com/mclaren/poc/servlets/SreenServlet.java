@@ -38,33 +38,38 @@ public class SreenServlet extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Executed Succesfully");
+		//System.out.println("Executed Succesfully");
 	    response.setContentType("application/json");
-	    System.out.println("SearchValue" + request.getParameter("searchValue")); 
+	    System.out.println("SearchValue" + request.getParameter("searchValue"));
 		String action = request.getParameter("action");
+		   System.out.println("Action" + request.getParameter("action"));
 		if(action != null && action.equalsIgnoreCase("1")){
-			System.out.println("Search Data"+gson.toJson(service.search(request.getParameter("searchValue"))));
+			//System.out.println("Search list Data"+gson.toJson(service.search(request.getParameter("searchValue"))));
 			response.getWriter().write(gson.toJson(service.search(request.getParameter("searchValue"))));
 		} if(action != null && action.equalsIgnoreCase("2")){
 			
-			System.out.println("Search Data"+gson.toJson(service.findNodesData(request.getParameter("searchValue"))));
+			//System.out.println("Search node Data"+gson.toJson(service.findNodesData(request.getParameter("searchValue"))));
 			response.getWriter().write(gson.toJson(service.findNodesData(request.getParameter("searchValue"))));
 		}if(action != null && action.equalsIgnoreCase("3")){
 			List<String> list = new ArrayList<String>();
 			list.add("TS");
-			System.out.println("Search Data"+gson.toJson(service.findSubSelectedSyatem(request.getParameter("searchValue"),list)));
+			//System.out.println("Search sub node Data"+gson.toJson(service.findSubSelectedSyatem(request.getParameter("searchValue"),list)));
 			response.getWriter().write(gson.toJson(service.findSubSelectedSyatem(request.getParameter("searchValue"),list)));
 		}if(action != null && action.equalsIgnoreCase("4")){
-			System.out.println("Get all the Relations"+ gson.toJson(service.getAllRelations()));
+			//System.out.println("Get all the Relations"+ gson.toJson(service.getAllRelations()));
 			response.getWriter().write(gson.toJson(service.getAllRelations()));
 		}if(action != null && action.equalsIgnoreCase("5")){
 			List<String> myList = new ArrayList<String>(Arrays.asList(request.getParameter("searchItem").split(",")));
-			System.out.println("Search Checked Data"+request.getParameter("searchValue"));
-			System.out.println("Search Data"+gson.toJson(service.findSubSelectedSyatem(request.getParameter("searchValue"),myList)));
+			//System.out.println("Search Checked Data"+request.getParameter("searchValue"));
+			//System.out.println("Search Data"+gson.toJson(service.findSubSelectedSyatem(request.getParameter("searchValue"),myList)));
 			response.getWriter().write(gson.toJson(service.findSubSelectedSyatem(request.getParameter("searchValue"),myList)));
-		}
-	}
+		}if(action != null && action.equalsIgnoreCase("6")){
+			//System.out.println("Get all the BPELS default"+ gson.toJson(service.searchDefault()));
+			response.getWriter().write(gson.toJson(service.searchDefault()));
+			
+		}if(action != null && action.equalsIgnoreCase("7")){
+			
+			//System.out.println("Search node Data"+gson.toJson(service.findNodesData(request.getParameter("searchValue"))));
+			response.getWriter().write(gson.toJson(service.findNodesData(request.getParameter("searchValue"))));
+	}}
 }
-
-
-
