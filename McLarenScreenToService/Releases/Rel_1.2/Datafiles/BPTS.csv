@@ -267,4 +267,4 @@ RetrieveUserListService,CRMContactTS,CRM
 RetrieveWorkPackageList,ValidateUserService,LDAP
 RetrieveWorkPackageList,SMSWorkPackageTS,CRM
 ReadEntitlement,ValidateUserService,LDAP
-ReadEntitlement,ReadEntitlementTS ,IDB
+ReadEntitlement,ReadEntitlementTSÂ ,IDB
